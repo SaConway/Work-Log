@@ -1,0 +1,8 @@
+<button class="btn-newshift" id="newShiftBtn" ng-click="OnNewShift()" hidden="true">START A NEW SHIFT</button>
+<button class="btn-newshift" id="endShiftBtn" ng-click="OnEndShift()" hidden="true">END THIS SHIFT</button>
+<p id="stopwatch"></p>
+<h2 id="month-shifts">THIS MONTH SHIFTS</h2>
+<div>
+  <div ng-include="'total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
+  <div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
+</div>

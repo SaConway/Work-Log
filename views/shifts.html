@@ -1,0 +1,9 @@
+<div id="select-month-year">
+  <span>Year:</span>
+  <select ng-change="selectedYearChanged()" ng-model="selectedYear" ng-options="x for x in years"></select>
+  <span id="month-span">Month:</span>
+  <select ng-change="selectedMonthChanged()" ng-model="selectedMonth" ng-options="x for x in months"></select>
+</div>
+<div ng-include="'total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
+<div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
+<span ng-hide="isShifts">No shifts in {{selectedMonth}}</span>

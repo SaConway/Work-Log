@@ -1,6 +1,6 @@
 myApp.factory('shift', function(){
 
-  return function shift() {
+  return function() {
 
     this.mStart = null;
     this.mEnd = null;

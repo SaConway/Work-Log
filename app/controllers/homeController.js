@@ -1,5 +1,5 @@
-myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$localStorage', '$timeout',
- function($scope, $http, shiftsApi, shift, $localStorage, $timeout){
+myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$localStorage', '$timeout', '$window',
+ function($scope, $http, shiftsApi, shift, $localStorage, $timeout, $window){
 
    //-------------------------------------------------
    // INITIALIZE
@@ -19,6 +19,7 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     var date = new Date();
     newshift = new shift();
     newshift.setStart(date);
+    newshift.setUserId($localStorage.userId);
 
     $localStorage.isNewShift = "true";
     $localStorage.startShift = date;
@@ -59,6 +60,10 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
   //-------------------------------------------------
 
   function init(){
+
+    if ($localStorage.userId == undefined){
+      $window.location.href = '#!/login';
+    }
 
     if ($localStorage.isNewShift === "true"){
       // New shift was begin

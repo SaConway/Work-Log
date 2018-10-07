@@ -1,7 +1,11 @@
-myApp.controller('statisticsController', ['$scope', function($scope){
+myApp.controller('statisticsController', ['$scope', '$window', '$localStorage',
+function($scope, $window, $localStorage){
+
+  if ($localStorage.userId == undefined){
+    $window.location.href = '#!/login';
+  }
 
   $scope.$on('reCalculateStatisticsEvent', function(event, args) {
-
 
     var seconds = 0;
 

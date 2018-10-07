@@ -5,6 +5,7 @@ myApp.factory('shift', function(){
     this.mStart = null;
     this.mEnd = null;
     this.mHours = null;
+    this.mUserId = null;
 
     this.setStart = function(start){
       this.mStart = start;
@@ -15,12 +16,16 @@ myApp.factory('shift', function(){
     this.setHours = function(hours){
       this.mHours = hours;
     };
+    this.setUserId = function(userId){
+      this.mUserId = userId;
+    };
     this.getShift = function(){
       return {
         "start": formatTime(this.mStart.getHours() + ":" + this.mStart.getMinutes()),
         "end": formatTime(this.mEnd.getHours() + ":" + this.mEnd.getMinutes()),
         "date": formatDate(this.mStart),
-        "hours": formatTime(this.mHours)
+        "hours": formatTime(this.mHours),
+        "userId": this.mUserId
       };
     };
     this.getStart = function(){

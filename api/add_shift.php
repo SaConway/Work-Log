@@ -11,8 +11,8 @@ if(isset($postdata) && !empty($postdata))
 {
     $request = json_decode($postdata);
 
-    $sql = "INSERT INTO `shifts`(`start`, `end`, `date`, `hours`) VALUES
-     ('$request->start','$request->end', '$request->date', '$request->hours')";
+    $sql = "INSERT INTO `shifts`(`start`, `end`, `date`, `hours`, `user_id`) VALUES
+     ('$request->start','$request->end', '$request->date', '$request->hours', '$request->userId')";
 
     mysqli_query($connect,$sql);
 }

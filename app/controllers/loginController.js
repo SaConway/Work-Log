@@ -1,21 +1,24 @@
 myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$window', 'usersApi', 'user',
   function($scope, $http, $localStorage, $window, usersApi, user){
 
-    delete $localStorage.userId;
-
   $scope.OnLoginBtn = function(){
 
-    user.setFullName($scope.fullName);
-    user.setId($scope.id);
-    if ($scope.hourlyWage != undefined) user.setHourlyWage($scope.hourlyWage);
+    $username = toFullNameCase($scope.fullName.trim());
+    $userid = $scope.id.trim();
+
+    user.setFullName($username);
+    user.setId($userid);
 
     usersApi.addUser(user.getUser()).
       then(function successCallback(response){
 
-        console.log(response);
-
-        $localStorage.userId = $scope.id;
-        $window.location.href = '#!/home';
+        if (response.data != 'Wrong name'){
+          $localStorage.userId = $scope.id;
+          $window.location.href = '#!/home';
+        }
+        else {
+          $scope.isValid = false;
+        }
 
       }, function errorCallback(response){
     });
@@ -24,7 +27,7 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
   function init(){
 
-    console.log($localStorage.userId);
+    $scope.isValid = true;
 
     if ($localStorage.userId != undefined){
       $window.location.href = '#!/home';
@@ -32,8 +35,13 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
   };  // end init function
 
+  function toFullNameCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  };  // end toFullNameCase function
 
 
   init();
 
-}]);
+}]);  // end loginController

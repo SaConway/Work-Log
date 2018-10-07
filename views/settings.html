@@ -1,0 +1,8 @@
+<header ng-include="'header.html'"></header>
+<div>
+  Hourly Wage
+  <input ng-model="hourlyWage" type="number"></input>
+</div>
+<div ng-show="updatedSuccessfully">The information was updated successfully</div>
+<div ng-show="updateFailed">Failed to update the information</div>
+<button ng-click="OnSave()">Save</button>

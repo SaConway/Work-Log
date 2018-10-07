@@ -11,6 +11,14 @@ myApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'views/home.html',
       controller: 'homeController'
     })
+    .when('/settings', {
+      templateUrl: 'views/settings.html',
+      controller: 'settingsController'
+    })
+    .when('/logout', {
+      templateUrl: 'views/logout.html',
+      controller: 'logoutController'
+    })
     .when('/shifts', {
       templateUrl: 'views/shifts.html',
       controller: 'shiftsController'

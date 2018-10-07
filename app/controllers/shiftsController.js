@@ -1,4 +1,5 @@
-myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout', function($scope, $http, shiftsApi, $timeout) {
+myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout', '$localStorage', '$window',
+ function($scope, $http, shiftsApi, $timeout, $localStorage, $window) {
 
   const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -9,6 +10,10 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
   $scope.selectedYear = "2018";
   const d = new Date();
   $scope.selectedMonth = monthNames[d.getMonth()];
+
+  if ($localStorage.userId == undefined){
+    $window.location.href = '#!/login';
+  }
 
   $scope.selectedYearChanged = function(){
     broadcast();

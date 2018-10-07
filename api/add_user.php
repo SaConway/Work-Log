@@ -8,7 +8,7 @@ $connect = connect();
 
 $fullname = $_GET['fullName'];
 $id = $_GET['id'];
-$hourlywage = $_GET['hourlyWage'];
+// $hourlywage = $_GET['hourlyWage'];
 
 if ($fullname != null and $id != null) {
 
@@ -36,8 +36,8 @@ if ($fullname != null and $id != null) {
 
   // Insert new user
 
-  $sql = "INSERT INTO `users`(`full_name`, `id`, `hourly_wage`) VALUES
-    ('$fullname','$id', '$hourlywage')";
+  $sql = "INSERT INTO `users`(`full_name`, `id`) VALUES
+    ('$fullname','$id')";
 
   if ($result = $connect->query($sql)){
     echo "New user";

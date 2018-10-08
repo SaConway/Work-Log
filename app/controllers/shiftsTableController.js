@@ -11,7 +11,11 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
       then(function successCallback(response){
 
         var myDate = new Date();
-        getShifts({"month": (myDate.getMonth() + 1), "year": myDate.getFullYear()});
+        getShifts({
+          "user_id" : $localStorage.userId,
+          "month": (myDate.getMonth() + 1),
+          "year": myDate.getFullYear()
+         });
 
       }, function errorCallback(response){
 
@@ -19,15 +23,25 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
 
   };
 
+  // Calculate wage from hours
+  $scope.calculateWage = function(hours){
+
+    var a = hours.split(':');
+    var temp = (+a[0]) * 60 + (+a[1]);
+
+    return (temp * ($localStorage.userHourlyWage / 60)).toFixed(2);
+
+  }; //end calculateWage function
+
   $scope.$on('updateShiftsEvent', function(event, args) {
 
     getShifts(args);
 
   });
 
-  function getShifts(monthAndYear) {
+  function getShifts(shiftsInfo) {
 
-    shiftsApi.getShifts(monthAndYear).
+    shiftsApi.getShifts(shiftsInfo).
       then(function successCallback(response){
 
         if (response.data.length > 0){

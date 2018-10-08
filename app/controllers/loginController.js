@@ -14,6 +14,15 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
         if (response.data != 'Wrong name'){
           $localStorage.userId = $scope.id;
+          $localStorage.userName = $scope.fullName;
+
+          usersApi.getUser({ "id" : $localStorage.userId }).
+            then(function successCallback(response){
+              $localStorage.userHourlyWage = Number(response.data.hourly_wage);
+            }, function errorCallback(response){
+
+          });
+
           $window.location.href = '#!/home';
         }
         else {

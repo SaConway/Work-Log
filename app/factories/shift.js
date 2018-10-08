@@ -25,7 +25,7 @@ myApp.factory('shift', function(){
         "end": formatTime(this.mEnd.getHours() + ":" + this.mEnd.getMinutes()),
         "date": formatDate(this.mStart),
         "hours": formatTime(this.mHours),
-        "userId": this.mUserId
+        "user_id": this.mUserId
       };
     };
     this.getStart = function(){

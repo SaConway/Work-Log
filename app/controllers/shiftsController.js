@@ -26,6 +26,7 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
   function broadcast(){
 
     $scope.$broadcast('updateShiftsEvent', {
+      "user_id" : $localStorage.userId,
       "month": (monthNames.findIndex(month => month === $scope.selectedMonth) + 1),
       "year": $scope.selectedYear
     });

@@ -3,8 +3,6 @@ myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localSt
 
   $scope.OnSave= function(){
 
-    console.log($scope.hourlyWage);
-
     usersApi.updateInfo({
       "id": $localStorage.userId,
       "hourlyWage": $scope.hourlyWage
@@ -12,6 +10,7 @@ myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localSt
       then(function successCallback(response){
 
         if (response.data == "Updated Successfully"){
+          $localStorage.userHourlyWage = $scope.hourlyWage;
           $scope.updatedSuccessfully = true;
           $scope.updateFailed = false;
         }
@@ -27,5 +26,13 @@ myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localSt
 
     });
   };  // end OnSave function
+
+  function init(){
+
+    $scope.hourlyWage = $localStorage.userHourlyWage;
+
+  };  // end init function
+
+  init();
 
 }]);

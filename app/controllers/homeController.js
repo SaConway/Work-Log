@@ -49,7 +49,11 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
         $("#endShiftBtn").fadeOut("fast");
         $("#newShiftBtn").fadeIn("fast");
         var myDate = new Date();
-        $scope.$broadcast('updateShiftsEvent', {"month": (myDate.getMonth() + 1), "year": myDate.getFullYear()});
+        $scope.$broadcast('updateShiftsEvent', {
+          "user_id": $localStorage.userId,
+          "month": (myDate.getMonth() + 1),
+          "year": myDate.getFullYear()
+         });
 
       }, function errorCallback(response){
     });
@@ -84,7 +88,11 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     var myDate = new Date();
 
     $timeout(function(){
-      $scope.$broadcast('updateShiftsEvent', {"month": (myDate.getMonth() + 1), "year": myDate.getFullYear()});
+      $scope.$broadcast('updateShiftsEvent', {
+        "user_id" : $localStorage.userId,
+        "month": (myDate.getMonth() + 1),
+        "year": myDate.getFullYear()
+       });
     });
 
   };

@@ -12,7 +12,7 @@ if(isset($postdata) && !empty($postdata))
     $request = json_decode($postdata);
 
     $sql = "INSERT INTO `shifts`(`start`, `end`, `date`, `hours`, `user_id`) VALUES
-     ('$request->start','$request->end', '$request->date', '$request->hours', '$request->userId')";
+     ('$request->start','$request->end', '$request->date', '$request->hours', '$request->user_id')";
 
     mysqli_query($connect,$sql);
 }

@@ -4,12 +4,14 @@
     <th>END</th>
     <th>DATE</th>
     <th>HOURS</th>
+    <th>WAGE</th>
   </tr>
   <tr ng-repeat="shift in shifts | orderBy:'date':true">
     <td>{{shift.start}}</td>
     <td>{{shift.end}}</td>
     <td>{{shift.date}}</td>
     <td>{{shift.hours}}</td>
+    <td>{{calculateWage(shift.hours)}}</td>
     <td><button ng-click="deleteShift(shift.id)">Delete</button></td>
   </tr>
 </table>

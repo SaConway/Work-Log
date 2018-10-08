@@ -8,9 +8,6 @@ $connect = connect();
 
 if (isset($_GET['hourlyWage']) and isset($_GET['id'])) {
 
-  $id = $_GET['id'];
-  $hourlyWage = $_GET['hourlyWage'];
-
   $sql = "UPDATE users SET hourly_wage = '{$_GET['hourlyWage']}' WHERE id = '{$_GET['id']}'";
 
   if ($result = $connect->query($sql)){

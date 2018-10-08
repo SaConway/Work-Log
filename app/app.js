@@ -11,6 +11,10 @@ myApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'views/home.html',
       controller: 'homeController'
     })
+    .when('/add_manually', {
+      templateUrl: 'views/add_manually.html',
+      controller: 'homeController'
+    })
     .when('/settings', {
       templateUrl: 'views/settings.html',
       controller: 'settingsController'

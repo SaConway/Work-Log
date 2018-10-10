@@ -7,7 +7,6 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 
   var myInterval = null;
   var newshift = null;
-  var hours = null;
 
   //-------------------------------------------------
   // SCOPE FUNCTIONS
@@ -20,6 +19,7 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     newshift = new shift();
     newshift.setStart(date);
     newshift.setUserId($localStorage.userId);
+    newshift.setDate(date);
 
     $localStorage.isNewShift = "true";
     $localStorage.startShift = date;
@@ -38,7 +38,6 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     $localStorage.isNewShift = "false";
 
     newshift.setEnd(new Date());
-    newshift.setHours(hours);
 
     clearInterval(myInterval);
     document.getElementById("stopwatch").innerHTML = '';
@@ -57,6 +56,7 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 
       }, function errorCallback(response){
     });
+
   };  // end OnEndShift function
 
   //-------------------------------------------------
@@ -95,25 +95,23 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
        });
     });
 
-  };
+  };  // end init function
 
   function stopWatch(){
+
     var now = new Date().getTime();
 
-    // Find the distance between now and the starting shift date
     var distance = now - newshift.getStart().getTime();
 
-    // Time calculations for hours, minutes and seconds
     var disHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var disMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var disSeconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    hours = disHours + ":" + disMinutes;// + ":" + disSeco
-
-    // Output the result in an element with id="stopwatch"
     document.getElementById("stopwatch").innerHTML = disHours + " Hours " + disMinutes + " Minutes " + disSeconds + " Seconds";
+
   };  // end stopWatch function
 
   init();
+
 
 }]);

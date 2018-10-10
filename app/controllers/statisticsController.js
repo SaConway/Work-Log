@@ -8,19 +8,28 @@ function($scope, $window, $localStorage){
   $scope.$on('reCalculateStatisticsEvent', function(event, args) {
 
     var seconds = 0;
+    var wage = 0;
 
     // Calculate total hours of this month
     args.forEach(function(shift, index, shifts){
       if (shift.hours !== null && shift.hours !== ""){
 
+        // Calculate total hours
+
         var a = shift.hours.split(':');
         var temp = (+a[0]) * 60 * 60 + (+a[1]) * 60;
-        seconds = seconds + temp;
+        seconds += temp;
+
+        // Calculate total wage
+
+        temp = (+a[0]) * 60 + (+a[1]);
+        wage += (temp * ($localStorage.userHourlyWage / 60));
       }
     });
 
     $scope.totalHours = toHHMMSS(seconds);
     $scope.totalShifts = args.length;
+    $scope.totalWage = wage.toFixed(2);
 
   });
 

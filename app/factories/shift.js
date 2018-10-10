@@ -4,8 +4,8 @@ myApp.factory('shift', function(){
 
     this.mStart = null;
     this.mEnd = null;
-    this.mHours = null;
     this.mUserId = null;
+    this.mDate = null;
 
     this.setStart = function(start){
       this.mStart = start;
@@ -13,18 +13,18 @@ myApp.factory('shift', function(){
     this.setEnd = function(end){
       this.mEnd = end;
     };
-    this.setHours = function(hours){
-      this.mHours = hours;
-    };
     this.setUserId = function(userId){
       this.mUserId = userId;
+    };
+    this.setDate = function(date){
+      this.mDate = date;
     };
     this.getShift = function(){
       return {
         "start": formatTime(this.mStart.getHours() + ":" + this.mStart.getMinutes()),
         "end": formatTime(this.mEnd.getHours() + ":" + this.mEnd.getMinutes()),
-        "date": formatDate(this.mStart),
-        "hours": formatTime(this.mHours),
+        "date": formatDate(this.mDate),
+        "hours": formatHours(this.mStart, this.mEnd),
         "user_id": this.mUserId
       };
     };
@@ -43,9 +43,11 @@ myApp.factory('shift', function(){
     if (minutes < 10) {minutes = "0" + minutes;}
 
     return hours + ':' + minutes;
-  };
+
+  };  // end formatTime function
 
   function formatDate(date){
+
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
@@ -55,6 +57,18 @@ myApp.factory('shift', function(){
     if (day.length < 2) day = '0' + day;
 
     return [year, month, day].join('-');
-  };
+
+  };  // end formatDate function
+
+  function formatHours(start, end){
+
+    var distance = end.getTime() - start.getTime();
+
+    var disHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var disMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    return formatTime(disHours + ":" + disMinutes);
+
+  };  // end formatHours function
 
 }); // end shift factory

@@ -28,7 +28,6 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
 
     var a = hours.split(':');
     var temp = (+a[0]) * 60 + (+a[1]);
-
     return (temp * ($localStorage.userHourlyWage / 60)).toFixed(2);
 
   }; //end calculateWage function

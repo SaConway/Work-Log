@@ -13,7 +13,7 @@ myApp.config(['$routeProvider', function($routeProvider){
     })
     .when('/add_manually', {
       templateUrl: 'views/add_manually.html',
-      controller: 'homeController'
+      controller: 'addManuallyController'
     })
     .when('/settings', {
       templateUrl: 'views/settings.html',

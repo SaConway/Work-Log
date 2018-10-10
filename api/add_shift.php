@@ -14,6 +14,13 @@ if(isset($postdata) && !empty($postdata))
     $sql = "INSERT INTO `shifts`(`start`, `end`, `date`, `hours`, `user_id`) VALUES
      ('$request->start','$request->end', '$request->date', '$request->hours', '$request->user_id')";
 
-    mysqli_query($connect,$sql);
+     if ($result = $connect->query($sql)){
+       echo "Updated Successfully";
+     }
+     else{
+       echo "Update Failed";
+     }
+
+    //mysqli_query($connect,$sql);
 }
 ?>

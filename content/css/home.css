@@ -1,0 +1,47 @@
+
+#first-container{
+  height: 500px;
+  background-image: url('../images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-newshift{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  letter-spacing: 1.5px;
+  background-color: #008CBA;
+  font-size: 21px;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 350px;
+  height: 80px;
+  text-align: center;
+  border-radius: 25px;
+  border-width: 0px;
+  position: fixed;
+  left: 130px;
+  top: 250px;
+}
+
+#stopwatch{
+  color: red;
+}
+
+#month-shifts{
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #cfdce6;
+}
+
+table{
+  width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+}

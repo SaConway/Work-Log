@@ -7,6 +7,8 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 
   var myInterval = null;
   var newshift = null;
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
 
   //-------------------------------------------------
   // SCOPE FUNCTIONS
@@ -27,8 +29,9 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 		// Update the stopwatch every 1 second
 		myInterval = setInterval(stopWatch, 1000);
 
-		$("#newShiftBtn").fadeOut("fast");
-		$("#endShiftBtn").fadeIn("fast");
+		$("#new-shift-btn").fadeOut("fast");
+		$("#end-shift-btn").fadeIn("fast");
+    $('#shift-info').fadeIn("fast");
 
 	}; // end OnNewShift function
 
@@ -45,8 +48,10 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     shiftsApi.addShift(newshift.getShift()).
       then(function successCallback(response){
 
-        $("#endShiftBtn").fadeOut("fast");
-        $("#newShiftBtn").fadeIn("fast");
+        $("#end-shift-btn").fadeOut("fast");
+        $("#new-shift-btn").fadeIn("fast");
+        $('#shift-info').fadeOut("fast");
+
         var myDate = new Date();
         $scope.$broadcast('updateShiftsEvent', {
           "user_id": $localStorage.userId,
@@ -78,14 +83,19 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
       // Update the stopwatch every 1 second
       myInterval = setInterval(stopWatch, 1000);
 
-      $("#endShiftBtn").fadeIn("fast");
+      $("#end-shift-btn").fadeIn("fast");
+      $('#shift-info').fadeIn("fast");
     }
     else{
       // New shift was NOT begin
-      $("#newShiftBtn").fadeIn("fast");
+      $("#new-shift-btn").fadeIn("fast");
     }
 
+
     var myDate = new Date();
+
+    $scope.thisMonth = monthNames[myDate.getMonth()];
+
 
     $timeout(function(){
       $scope.$broadcast('updateShiftsEvent', {
@@ -107,7 +117,8 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
     var disMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var disSeconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("stopwatch").innerHTML = disHours + " Hours " + disMinutes + " Minutes " + disSeconds + " Seconds";
+    if (document.getElementById("stopwatch") != null)
+      document.getElementById("stopwatch").innerHTML = disHours + " : " + disMinutes + " : " + disSeconds;
 
   };  // end stopWatch function
 

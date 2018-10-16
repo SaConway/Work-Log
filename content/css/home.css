@@ -1,47 +1,87 @@
 
 #first-container{
   height: 500px;
-  background-image: url('../images/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/background.jpg') no-repeat center;
   background-size: cover;
+  width: 100%;
+}
+
+#socond-container{
+  background-color: #f0eced;
+  width: 100%;
 }
 
 .btn-newshift{
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: inherit;
   letter-spacing: 1.5px;
   background-color: #008CBA;
   font-size: 21px;
   color: #FFFFFF;
   font-weight: bold;
-  width: 350px;
-  height: 80px;
   text-align: center;
+  padding: 30px;
   border-radius: 25px;
   border-width: 0px;
-  position: fixed;
-  left: 130px;
+}
+
+#new-shift-btn{
+  position: relative;
+  left: 10%;
   top: 250px;
 }
 
+#shift-erea{
+  position: relative;
+  left: 10%;
+  top: 250px;
+  background-color: #8d9ba0;
+  width: 227px;
+  border-radius: 25px;
+  border-width: 0px;
+}
+
+p{
+  text-align: center;
+  color: #FFFFFF;
+}
+
 #stopwatch{
-  color: red;
+  color: #FFFFFF;
+  font-size: 35px;
+  text-align: center;
 }
 
 #month-shifts{
-  margin-top: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 10px;
-  background-color: #cfdce6;
+  color: #000000;
+  font-size: 25px;
+  margin: 0;
+  padding: 70px 0 0 0;
 }
 
-table{
-  width: 100%;
-}
+@media screen and (max-width: 900px) {
 
-th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #cccccc;
+  #first-container{
+    height: 300px;
+  }
+
+  .btn-newshift{
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  #new-shift-btn{
+    top: 150px;
+  }
+
+  #shift-erea{
+    top: 150px;
+    width: 161px;
+  }
+
+  #stopwatch{
+    font-size: 25px;
+  }
+
 }

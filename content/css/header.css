@@ -1,14 +1,11 @@
-
-
-#menu-bar{
+#header{
   background-color: #FFFFFFFF;
   overflow: auto;
-  width: 70%;
+  width: 80%;
   margin: auto;
 }
 
 #title{
-  width: auto;
   float: left;
   margin: 25px 10px 25px 10px;
   color: #000000;
@@ -24,12 +21,12 @@
   font-size: 17px;
 }
 
-.header-right {
+#header-right {
   margin: 35px 20px 25px 0px;
   float: right;
 }
 
-#menu-bar a {
+#header a {
   text-decoration: none;
   color: #0D3960;
   padding: 8px;
@@ -37,15 +34,15 @@
 
 
 @media screen and (max-width: 500px) {
-  .header-right{
+
+  #header-right{
     display: inline-grid;
+    float: none;
   }
-  #menu-bar a {
+
+  #header a {
     float: none;
     display: inline-block;
     text-align: left;
-  }
-  .header-right {
-    float: none;
   }
 }

@@ -2,12 +2,15 @@
 
 <header ng-include="'header.html'"></header>
 <div id="first-container">
-  <button class="btn-newshift" id="newShiftBtn" ng-click="OnNewShift()" hidden="true">Start a New Shift</button>
-  <button class="btn-newshift" id="endShiftBtn" ng-click="OnEndShift()" hidden="true">End This Shift</button>
-  <p id="stopwatch"></p>
+  <button class="btn-newshift" id="new-shift-btn" ng-click="OnNewShift()" hidden="true">Start a New Shift</button>
+  <div id="shift-erea">
+    <button class="btn-newshift" id="end-shift-btn" ng-click="OnEndShift()" hidden="true">End This Shift</button>
+    <p id="shift-info" hidden="true">Time Passed<br/><span id="stopwatch"></span></p>
+  </div>
 </div>
-<h2 id="month-shifts">THIS MONTH SHIFTS</h2>
-<div>
+<div id="socond-container">
+  <p id="month-shifts">{{thisMonth}}'s shifts so far..</p>
   <div ng-include="'total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
   <div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
+  
 </div>

@@ -7,19 +7,23 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
 
   $scope.deleteShift = function(id){
 
-    shiftsApi.deleteShift({ "id" : id }).
-      then(function successCallback(response){
+    if ($window.confirm("Are you sure you want to delete this shift?")){
 
-        var myDate = new Date();
-        getShifts({
-          "user_id" : $localStorage.userId,
-          "month": (myDate.getMonth() + 1),
-          "year": myDate.getFullYear()
-         });
+      shiftsApi.deleteShift({ "id" : id }).
+        then(function successCallback(response){
 
-      }, function errorCallback(response){
+          var myDate = new Date();
+          getShifts({
+            "user_id" : $localStorage.userId,
+            "month": (myDate.getMonth() + 1),
+            "year": myDate.getFullYear()
+           });
 
-    });
+        }, function errorCallback(response){
+
+      });
+
+    }
 
   };
 

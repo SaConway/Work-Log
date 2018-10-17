@@ -1,7 +1,18 @@
 #select-month-year{
-  margin: 10px;
+  margin: 80px 5px 50px 5px;
 }
 
 #month-span{
   margin-left: 15px;
+}
+
+#shift-table-page{
+  background-color: #f0eced;
+  text-align: center;
+}
+
+select{
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
 }

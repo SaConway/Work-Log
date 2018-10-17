@@ -5,6 +5,10 @@
   margin: auto;
 }
 
+header{
+  background-color: #FFFFFF;
+}
+
 #title{
   float: left;
   margin: 25px 10px 25px 10px;

@@ -1,18 +1,21 @@
+
 <header ng-include="'header.html'"></header>
 <div id="add-manually">
+  <h1>Add Shifts Manually</h1>
   <div>
-    Start
+    <span>Start</span>
     <input ng-model="startShift" type="time"></input>
   </div>
   <div>
-    End
+    <span>End</span>
     <input ng-model="endShift" type="time"></input>
   </div>
   <div>
-    Date
+      <span>Date</span>
     <input ng-model="dateShift" type="date"></input>
   </div>
-  <div ng-show="updatedSuccessfully">The shift was updated successfully</div>
-  <div ng-show="updateFailed">Failed to update the shift</div>
-  <button ng-click="OnSave()">Save</button>
+  <p id="success-messege" ng-show="updatedSuccessfully">The shift was updated successfully</p>
+  <p id="failure-meesege" ng-show="updateFailed">Failed to update the shift</p>
+  <button ng-click="OnSave()">Save Shift</button>
 </div>
+<link href="content/css/add_manually.css" rel="stylesheet" type="text/css"/>

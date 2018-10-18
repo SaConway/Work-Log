@@ -1,4 +1,54 @@
 #add-manually{
   text-align: center;
-  padding: 100px 0 100px 0;
+  padding: 30px 0 30px 0;
+  color: #000000;
+}
+
+#add-manually h1{
+  margin-bottom: 100px;
+}
+
+#add-manually input{
+  width: 200px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+#add-manually div{
+  margin: 30px;
+}
+
+#add_manually p{
+  padding: 20px;
+}
+
+#success-messege{
+  color: green;
+  font-size: 30px;
+}
+
+#failure-messege{
+  color: red;
+  font-size: 30px;
+}
+
+#add-manually span{
+  font-size: 25px;
+}
+
+#add-manually button{
+  margin: 40px 0 0 0;
+  letter-spacing: 1px;
+  background-color: #008CBA;
+  font-size: 25px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 30px;
+  border-radius: 25px;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+#add-manually button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

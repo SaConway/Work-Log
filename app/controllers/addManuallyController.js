@@ -1,6 +1,8 @@
 myApp.controller('addManuallyController', ['$scope', 'shift', '$localStorage', 'shiftsApi',
   function($scope, shift, $localStorage, shiftsApi){
 
+  $scope.$parent.showHeader = true;
+
   $scope.OnSave = function(){
 
     var newShift = new shift();

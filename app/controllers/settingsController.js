@@ -29,6 +29,7 @@ myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localSt
 
   function init(){
 
+    $scope.$parent.showHeader = true;
     $scope.hourlyWage = $localStorage.userHourlyWage;
 
   };  // end init function

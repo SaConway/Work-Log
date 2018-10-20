@@ -15,6 +15,8 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
     $window.location.href = '#!/login';
   }
 
+  $scope.$parent.showHeader = true;
+
   $scope.selectedYearChanged = function(){
     broadcast();
   };

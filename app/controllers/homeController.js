@@ -74,6 +74,10 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
       $window.location.href = '#!/login';
     }
 
+    console.log($scope.$parent);
+
+    $scope.$parent.showHeader = true;
+
     if ($localStorage.isNewShift === "true"){
       // New shift was begin
 

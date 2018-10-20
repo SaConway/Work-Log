@@ -1,10 +1,19 @@
-<div>
-  <span>Full Name</span>
-  <input ng-model="fullName"></input>
+
+<div id="login">
+  <h1>Work Log</h1>
+
+  <div class="row">
+    <label>Full Name:</label>
+    <input ng-model="fullName"></input>
+  </div>
+  <div class="row">
+    <label>Id:</label>
+    <input ng-model="id"></input>
+  </div>
+
+  <div ng-hide="isValid">Error: Full Name or Id are wrong</div>
+  <button ng-click="OnLoginBtn()">Login</button>
+
 </div>
-<div>
-  <span>Id</span>
-  <input ng-model="id"></input>
-</div>
-<div ng-hide="isValid">Error: Full Name or Id are wrong</div>
-<button ng-click="OnLoginBtn()">Login</button>
+
+<link href="content/css/login.css" rel="stylesheet" type="text/css"/>

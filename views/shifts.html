@@ -1,4 +1,3 @@
-<header ng-include="'header.html'"></header>
 <div id="shift-table-page">
   <div id="select-month-year">
     <span>Year:</span>
@@ -10,3 +9,4 @@
   <div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
   <span ng-hide="isShifts">No shifts in {{selectedMonth}} {{selectedYear}}</span>
 </div>
+<link href="content/css/shifts.css" rel="stylesheet" type="text/css"/>

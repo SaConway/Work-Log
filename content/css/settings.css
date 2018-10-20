@@ -1,10 +1,29 @@
-#add-manually{
+#settings{
   text-align: center;
   padding: 30px 0 30px 0;
   color: #000000;
 }
 
-button{
+#settings h1{
+  margin-bottom: 100px;
+}
+
+#settings input{
+  width: 200px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+#settings span{
+  font-size: 25px;
+}
+
+#settings p{
+  padding: 20px;
+  font-size: 25px;
+}
+
+#settings button{
   margin: 40px 0 0 0;
   letter-spacing: 1px;
   background-color: #008CBA;
@@ -17,17 +36,8 @@ button{
   cursor: pointer;
 }
 
-button:hover{
+#settings button:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-h1{
-  margin-bottom: 100px;
-}
-
-p{
-  padding: 20px;
-  font-size: 25px;
 }
 
 #success-messege{
@@ -36,23 +46,4 @@ p{
 
 #failure-messege{
   color: red;
-}
-
-input{
-  font-size: 20px;
-  width: 256px;
-  text-align: center;
-}
-
-input, label{
-  display: inline-block;
-}
-
-label{
-  width: 100px;
-  font-size: 25px;
-}
-
-.row{
-  margin-bottom: 20px;
 }

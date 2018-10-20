@@ -1,8 +1,11 @@
-<header ng-include="'header.html'"></header>
-<div>
-  Hourly Wage
-  <input ng-model="hourlyWage" type="number"></input>
+<div id="settings">
+  <h1>Update Your Private Information</h1>
+  <div>
+    <span>Hourly Wage:</span>
+    <input ng-model="hourlyWage" type="number"></input>
+  </div>
+  <p id="success-messege" ng-show="updatedSuccessfully">The information was updated successfully</p>
+  <p id="failure-meesege" ng-show="updateFailed">Failed to update the information</p>
+  <button ng-click="OnSave()">Save</button>
 </div>
-<div ng-show="updatedSuccessfully">The information was updated successfully</div>
-<div ng-show="updateFailed">Failed to update the information</div>
-<button ng-click="OnSave()">Save</button>
+<link href="content/css/settings.css" rel="stylesheet" type="text/css"/>

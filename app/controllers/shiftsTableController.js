@@ -59,6 +59,9 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
         $scope.shifts = response.data;
         $scope.$parent.$broadcast('reCalculateStatisticsEvent', $scope.shifts);
 
+        var parentScope = $scope.$parent;
+        parentScope.child = $scope.shifts;
+
       }, function errorCallback(response){
 
     });

@@ -5,7 +5,9 @@
     <span id="month-span">Month:</span>
     <select ng-change="selectedMonthChanged()" ng-model="selectedMonth" ng-options="x for x in months"></select>
   </div>
-  <button ng-click="DownloadExcel()">Download Excel</button>
+  <div>
+    <button ng-click="DownloadExcel()" id="download-btn" ng-show="isShifts">Download Excel</button>
+  </div>
   <div ng-include="'total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
   <div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
   <span ng-hide="isShifts">No shifts in {{selectedMonth}} {{selectedYear}}</span>

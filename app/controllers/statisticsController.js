@@ -31,6 +31,9 @@ function($scope, $window, $localStorage){
     $scope.totalShifts = args.length;
     $scope.totalWage = wage.toFixed(2);
 
+    var parentScope = $scope.$parent;
+    parentScope.totalHours = $scope.totalHours;
+
   });
 
   // Convert seconds of type String to format hh:mm:ss

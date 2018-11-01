@@ -26,7 +26,6 @@
 
 .btn-newshift:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-
 }
 
 #new-shift-btn{
@@ -52,8 +51,9 @@ p{
 
 #stopwatch{
   color: #FFFFFF;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
+  padding: 0;
 }
 
 #month-shifts{
@@ -61,6 +61,13 @@ p{
   font-size: 25px;
   margin: 0;
   padding: 70px 0 0 0;
+}
+
+#no-shifts{
+  color: #000000;
+  font-size: 25px;
+  margin: 0;
+  padding: 100px 0 100px 0;
 }
 
 @media screen and (max-width: 900px) {

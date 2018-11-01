@@ -1,5 +1,5 @@
 #select-month-year{
-  margin: 80px 5px 50px 5px;
+  margin: 50px 5px 50px 5px;
 }
 
 #month-span{
@@ -9,6 +9,23 @@
 #shift-table-page{
   background-color: #f0eced;
   text-align: center;
+}
+
+#download-btn{
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  background-color: #555555;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  border-radius: 25px;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+#download-btn:hover{
+  opacity: 0.9;
 }
 
 select{

@@ -8,9 +8,9 @@
   </div>
 </div>
 <div id="socond-container">
-  <p id="month-shifts">{{thisMonth}}'s shifts so far..</p>
+  <p id="month-shifts" ng-show="isShifts">{{thisMonth}}'s shifts so far..</p>
+  <p id="no-shifts" ng-hide="isShifts">No shifts in {{thisMonth}} so far..</p>
   <div ng-include="'total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
   <div ng-include="'shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
-
 </div>
 <link href="content/css/home.css" rel="stylesheet" type="text/css"/>

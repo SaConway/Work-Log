@@ -5,6 +5,12 @@ myApp.controller('addManuallyController', ['$scope', 'shift', '$localStorage', '
 
   $scope.OnSave = function(){
 
+    if ($scope.startShift == undefined || $scope.endShift == undefined ||
+        $scope.dateShift == undefined)
+    {
+      return;
+    }
+
     var newShift = new shift();
     newShift.setStart($scope.startShift);
     newShift.setEnd($scope.endShift);

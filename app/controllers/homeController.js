@@ -81,6 +81,8 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 
       newshift = new shift();
       newshift.setStart(new Date($localStorage.startShift));
+      newshift.setUserId($localStorage.userId);
+      newshift.setDate($localStorage.startShift);
 
       // Update the stopwatch every 1 second
       myInterval = setInterval(stopWatch, 1000);

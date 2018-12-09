@@ -1,5 +1,4 @@
-
-<div id="login">
+<div id="login" ng-keypress="KeyPress($event)">
   <h1>Work Log</h1>
 
   <div class="row">
@@ -11,9 +10,6 @@
     <input ng-model="id"></input>
   </div>
 
-  <div ng-hide="isValid">Error: Full Name or Id are wrong</div>
+  <div ng-style="{ 'color' : 'red'}">{{error}}</div>
   <button ng-click="OnLoginBtn()">Login</button>
-
 </div>
-
-<link href="content/css/login.css" rel="stylesheet" type="text/css"/>

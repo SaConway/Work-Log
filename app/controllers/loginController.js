@@ -3,6 +3,8 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
   $scope.OnLoginBtn = function(){
 
+    if ($scope.fullName == undefined || $scope.id == undefined) return;
+
     $username = toFullNameCase($scope.fullName.trim());
     $userid = $scope.id.trim();
 
@@ -26,13 +28,23 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
           $window.location.href = '#!/home';
         }
         else {
-          $scope.isValid = false;
+          $scope.error = 'Error: Full Name or Id are wrong';
         }
 
       }, function errorCallback(response){
+        $scope.error = 'Something went wrong';
     });
 
   }; // end OnLoginBtn function
+
+  $scope.KeyPress = function($event){
+
+    var keyCode = $event.keyCode;
+    if (keyCode === 13) {   // Enter Key
+        $scope.OnLoginBtn();
+    }
+
+  };  // end KeyPress function
 
   function init(){
 

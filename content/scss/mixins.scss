@@ -1,0 +1,21 @@
+@mixin mQ($arg){
+  @media screen and (max-width: $arg){
+    @content;
+  }
+}
+
+@mixin myBtn(){
+  margin: 40px 0 0 0;
+  letter-spacing: 1px;
+  background-color: $blue;
+  font-size: 20px;
+  color: $white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 25px;
+  border-width: 0px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.9;
+  }
+}

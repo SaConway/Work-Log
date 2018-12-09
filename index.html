@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
-    <title>Work Log</title>
+    <title ng-bind="title"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="content/css/styles.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="./content/images/favicon.ico"/>
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body ng-controller="baseController">
-    <header ng-include="'header.html'" ng-show="showHeader"></header>
+    <header ng-include="'views/header.html'" ng-show="showHeader"></header>
     <main ng-view></main>
   </body>
 </html>

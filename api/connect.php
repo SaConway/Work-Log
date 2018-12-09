@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
+
 // db credentials
 define('DB_HOST', '127.0.0.1');
 define('DB_USER','root');

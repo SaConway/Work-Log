@@ -17,8 +17,6 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
     return;
   }
 
-  $scope.$parent.showHeader = true;
-
   $scope.selectedYearChanged = function(){
     broadcast();
   };

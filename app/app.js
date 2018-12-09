@@ -27,6 +27,10 @@ myApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'app/features/logout/logout.html',
       controller: 'logoutController'
     })
+    .when('/no_connection', {
+      templateUrl: 'app/features/no_connection/no_connection.html',
+      controller: 'noConnectionController'
+    })
     .when('/shifts', {
       title: 'Shifts | Work Log',
       templateUrl: 'app/features/shifts/shifts.html',

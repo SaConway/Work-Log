@@ -7,8 +7,6 @@ myApp.controller('addManuallyController', ['$scope', '$window', 'shift', '$local
     return;
   }
 
-  $scope.$parent.showHeader = true;
-
   $scope.OnSave = function(){
 
     if ($scope.startShift == undefined || $scope.endShift == undefined ||

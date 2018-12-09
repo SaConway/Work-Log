@@ -1,5 +1,7 @@
-myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$localStorage', '$timeout', '$window',
- function($scope, $http, shiftsApi, shift, $localStorage, $timeout, $window){
+myApp.controller('homeController', ['$scope', '$http', 'shiftsApi',
+'connectionApi', 'shift', '$localStorage', '$timeout', '$window',
+ function($scope, $http, shiftsApi, connectionApi,
+   shift, $localStorage, $timeout, $window){
 
    //-------------------------------------------------
    // INITIALIZE
@@ -70,12 +72,19 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi', 'shift', '$l
 
   function init(){
 
+    connectionApi.check().
+      then(function successCallback(response){
+      },
+       function errorCallback(response){
+         $window.location.href = '#!/no_connection';
+         return;
+       });
+
     if ($localStorage.userId == undefined){
+      // User not logged in
       $window.location.href = '#!/login';
       return;
     }
-
-    $scope.$parent.showHeader = true;
 
     if ($localStorage.isNewShift === "true"){
       // New shift was begin

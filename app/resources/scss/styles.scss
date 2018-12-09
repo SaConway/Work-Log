@@ -28,7 +28,7 @@
     a{
       text-decoration: none;
       color: $darkBlue;
-      padding: 8px;
+      padding: 10px;
       @include mQ(900px){
         display: block;
       }
@@ -261,5 +261,29 @@ table{
   }
   button{
     @include myBtn;
+  }
+}
+
+// No connection
+
+#no-conn{
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  #center-div{
+    font-size: 18px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  button{
+    @include myBtn;
+    margin-top: 0;
+    font-size: 18px;
+    background-color: $gray;
+    padding: 15px;
   }
 }

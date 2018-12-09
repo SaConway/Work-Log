@@ -55,8 +55,6 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
       return;
     }
 
-    $scope.showHeader = false;
-
   };  // end init function
 
   function toFullNameCase(str) {

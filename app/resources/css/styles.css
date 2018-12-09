@@ -37,7 +37,7 @@ header {
     #header #header-nav a {
       text-decoration: none;
       color: #0D3960;
-      padding: 8px; }
+      padding: 10px; }
       @media screen and (max-width: 900px) {
         #header #header-nav a {
           display: block; } }
@@ -252,4 +252,34 @@ table {
     border-width: 0px;
     cursor: pointer; }
     #login button:hover {
+      opacity: 0.9; }
+
+#no-conn {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center; }
+  #no-conn #center-div {
+    font-size: 18px;
+    display: table-cell;
+    vertical-align: middle; }
+  #no-conn button {
+    margin: 40px 0 0 0;
+    letter-spacing: 1px;
+    background-color: #008CBA;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    border-width: 0px;
+    cursor: pointer;
+    margin-top: 0;
+    font-size: 18px;
+    background-color: #555555;
+    padding: 15px; }
+    #no-conn button:hover {
       opacity: 0.9; }

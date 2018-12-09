@@ -16,6 +16,7 @@
     <script src="app\factories\shiftsApi.js"></script>
     <script src="app\factories\user.js"></script>
     <script src="app\factories\usersApi.js"></script>
+    <script src="app\factories\connectionApi.js"></script>
     <script src="app\features\home\homeController.js"></script>
     <script src="app\features\shifts\shiftsController.js"></script>
     <script src="app\features\shifts\statisticsController.js"></script>
@@ -24,11 +25,11 @@
     <script src="app\features\logout\logoutController.js"></script>
     <script src="app\features\settings\settingsController.js"></script>
     <script src="app\features\add_manually\addManuallyController.js"></script>
+    <script src="app\features\no_connection\noConnectionController.js"></script>
     <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header ng-include="'app/header.html'" ng-show="showHeader"></header>
     <main ng-view></main>
   </body>
 </html>

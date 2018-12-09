@@ -14,6 +14,7 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
 
   if ($localStorage.userId == undefined){
     $window.location.href = '#!/login';
+    return;
   }
 
   $scope.$parent.showHeader = true;

@@ -52,7 +52,10 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
     if ($localStorage.userId != undefined){
       $window.location.href = '#!/home';
+      return;
     }
+
+    $scope.showHeader = false;
 
   };  // end init function
 

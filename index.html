@@ -3,8 +3,8 @@
   <head>
     <title ng-bind="title"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="content/css/styles.css" rel="stylesheet" type="text/css"/>
-    <link rel="shortcut icon" href="./content/images/favicon.ico"/>
+    <link href="app/resources/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="app/resources/images/favicon.ico"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app\lib\angular.min.js"></script>
     <script src="app\lib\angular-route.min.js"></script>
@@ -16,20 +16,19 @@
     <script src="app\factories\shiftsApi.js"></script>
     <script src="app\factories\user.js"></script>
     <script src="app\factories\usersApi.js"></script>
-    <script src="app\controllers\homeController.js"></script>
-    <script src="app\controllers\shiftsController.js"></script>
-    <script src="app\controllers\statisticsController.js"></script>
-    <script src="app\controllers\shiftsTableController.js"></script>
-    <script src="app\controllers\loginController.js"></script>
-    <script src="app\controllers\logoutController.js"></script>
-    <script src="app\controllers\settingsController.js"></script>
-    <script src="app\controllers\addManuallyController.js"></script>
-    <script src="app\controllers\baseController.js"></script>
+    <script src="app\features\home\homeController.js"></script>
+    <script src="app\features\shifts\shiftsController.js"></script>
+    <script src="app\features\shifts\statisticsController.js"></script>
+    <script src="app\features\shifts\shiftsTableController.js"></script>
+    <script src="app\features\login\loginController.js"></script>
+    <script src="app\features\logout\logoutController.js"></script>
+    <script src="app\features\settings\settingsController.js"></script>
+    <script src="app\features\add_manually\addManuallyController.js"></script>
     <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body ng-controller="baseController">
-    <header ng-include="'views/header.html'" ng-show="showHeader"></header>
+  <body>
+    <header ng-include="'app/header.html'" ng-show="showHeader"></header>
     <main ng-view></main>
   </body>
 </html>

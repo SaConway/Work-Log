@@ -3,6 +3,7 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
 
   if ($localStorage.userId == undefined){
     $window.location.href = '#!/login';
+    return;
   }
 
   $scope.deleteShift = function(id){

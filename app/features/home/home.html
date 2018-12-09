@@ -8,6 +8,6 @@
 <div id="socond-container">
   <p id="month-shifts" ng-show="isShifts">{{thisMonth}}'s shifts so far..</p>
   <p id="no-shifts" ng-hide="isShifts">No shifts in {{thisMonth}} so far..</p>
-  <div ng-include="'views/total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
-  <div ng-include="'views/shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
+  <div ng-include="'app/features/shifts/total_statistics.html'" ng-controller="statisticsController" ng-show="isShifts"></div>
+  <div ng-include="'app/features/shifts/shifts_table.html'" ng-controller="shiftsTableController" ng-show="isShifts"></div>
 </div>

@@ -1,5 +1,5 @@
-myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localStorage',
-  function($scope, $http, usersApi, $localStorage){
+myApp.controller('settingsController', ['$scope', '$window', '$http', 'usersApi', '$localStorage',
+  function($scope, $window, $http, usersApi, $localStorage){
 
   $scope.OnSave= function(){
 
@@ -28,6 +28,11 @@ myApp.controller('settingsController', ['$scope', '$http', 'usersApi', '$localSt
   };  // end OnSave function
 
   function init(){
+
+    if ($localStorage.userId == undefined){
+      $window.location.href = '#!/login';
+      return;
+    }
 
     $scope.$parent.showHeader = true;
     $scope.hourlyWage = $localStorage.userHourlyWage;

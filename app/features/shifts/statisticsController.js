@@ -3,6 +3,7 @@ function($scope, $window, $localStorage){
 
   if ($localStorage.userId == undefined){
     $window.location.href = '#!/login';
+    return;
   }
 
   $scope.$on('reCalculateStatisticsEvent', function(event, args) {

@@ -5,31 +5,31 @@ myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/login', {
       title: 'Login | Work Log',
-      templateUrl: 'views/login.html',
+      templateUrl: 'app/features/login/login.html',
       controller: 'loginController'
     })
     .when('/home', {
       title: 'Home | Work Log',
-      templateUrl: 'views/home.html',
+      templateUrl: 'app/features/home/home.html',
       controller: 'homeController'
     })
     .when('/add_manually', {
       title: 'Add Manually | Work Log',
-      templateUrl: 'views/add_manually.html',
+      templateUrl: 'app/features/add_manually/add_manually.html',
       controller: 'addManuallyController'
     })
     .when('/settings', {
       title: 'Settings | Work Log',
-      templateUrl: 'views/settings.html',
+      templateUrl: 'app/features/settings/settings.html',
       controller: 'settingsController'
     })
     .when('/logout', {
-      templateUrl: 'views/logout.html',
+      templateUrl: 'app/features/logout/logout.html',
       controller: 'logoutController'
     })
     .when('/shifts', {
       title: 'Shifts | Work Log',
-      templateUrl: 'views/shifts.html',
+      templateUrl: 'app/features/shifts/shifts.html',
       controller: 'shiftsController'
     }).otherwise({
       redirectTo: '/login'

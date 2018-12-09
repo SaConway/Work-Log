@@ -1,5 +1,11 @@
-myApp.controller('addManuallyController', ['$scope', 'shift', '$localStorage', 'shiftsApi',
-  function($scope, shift, $localStorage, shiftsApi){
+myApp.controller('addManuallyController', ['$scope', '$window', 'shift', '$localStorage', 'shiftsApi',
+  function($scope, $window, shift, $localStorage, shiftsApi){
+
+  if ($localStorage.userId == undefined){
+    console.log("in")
+    $window.location.href = '#!/login';
+    return;
+  }
 
   $scope.$parent.showHeader = true;
 

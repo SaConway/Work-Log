@@ -19,7 +19,7 @@
       font-size: 17px;
     }
   }
-  #header-nav{
+  nav{
     float: right;
     margin-top: 20px;
     @include mQ(900px){
@@ -179,6 +179,7 @@ table{
       width: 100px;
     }
     input{
+      font-size: 20px;
       width: 256px;
       text-align: center;
     }

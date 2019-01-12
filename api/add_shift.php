@@ -20,7 +20,5 @@ if(isset($postdata) && !empty($postdata))
      else{
        echo "Update Failed";
      }
-
-    //mysqli_query($connect,$sql);
 }
 ?>

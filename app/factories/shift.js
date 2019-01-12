@@ -33,6 +33,7 @@ myApp.factory('shift', function(){
     };
   }; // end shift function
 
+  // Retruns time in format hh:mm
   function formatTime(time){
 
     var a = time.toString().split(':');
@@ -46,6 +47,7 @@ myApp.factory('shift', function(){
 
   };  // end formatTime function
 
+  // Returns date in format dd-mm-yyy
   function formatDate(date){
 
     var d = new Date(date),
@@ -60,6 +62,7 @@ myApp.factory('shift', function(){
 
   };  // end formatDate function
 
+  // Returns shift hours (from start to end)
   function formatHours(start, end){
 
     var distance = end.getTime() - start.getTime();

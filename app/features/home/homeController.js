@@ -1,7 +1,6 @@
-myApp.controller('homeController', ['$scope', '$http', 'shiftsApi',
-'connectionApi', 'shift', '$localStorage', '$timeout', '$window',
- function($scope, $http, shiftsApi, connectionApi,
-   shift, $localStorage, $timeout, $window){
+myApp.controller('homeController', ['$scope', 'shiftsApi', 'connectionApi',
+ 'shift', '$localStorage', '$timeout', '$window',
+ function($scope, shiftsApi, connectionApi, shift, $localStorage, $timeout, $window){
 
    //-------------------------------------------------
    // INITIALIZE
@@ -51,8 +50,8 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi',
       then(function successCallback(response){
 
         $("#end-shift-btn").fadeOut("fast");
-        $("#new-shift-btn").fadeIn("fast");
         $('#shift-info').fadeOut("fast");
+        $("#new-shift-btn").fadeIn("fast");
 
         var myDate = new Date();
         $scope.$broadcast('updateShiftsEvent', {
@@ -72,13 +71,14 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi',
 
   function init(){
 
-    connectionApi.check().
+    connectionApi.check().  // check for connection with the server
       then(function successCallback(response){
+        // there's connection - do nothing
       },
        function errorCallback(response){
          $window.location.href = '#!/no_connection';
-         return;
-       });
+       }
+     );
 
     if ($localStorage.userId == undefined){
       // User not logged in
@@ -105,11 +105,9 @@ myApp.controller('homeController', ['$scope', '$http', 'shiftsApi',
       $("#new-shift-btn").fadeIn("fast");
     }
 
-
     var myDate = new Date();
 
     $scope.thisMonth = monthNames[myDate.getMonth()];
-
 
     $timeout(function(){
       $scope.$broadcast('updateShiftsEvent', {

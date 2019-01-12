@@ -6,6 +6,7 @@ function($scope, $window, $localStorage){
     return;
   }
 
+  // listen to reCalculateStatisticsEvent
   $scope.$on('reCalculateStatisticsEvent', function(event, args) {
 
     var seconds = 0;

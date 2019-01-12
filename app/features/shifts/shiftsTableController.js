@@ -23,9 +23,7 @@ myApp.controller('shiftsTableController', ['$scope', 'shiftsApi', '$window', '$l
         }, function errorCallback(response){
 
       });
-
     }
-
   };
 
   // Calculate wage from hours

@@ -28,18 +28,18 @@ header {
       font-weight: bold; }
     #header #title #sub-title {
       font-size: 17px; }
-  #header #header-nav {
+  #header nav {
     float: right;
     margin-top: 20px; }
     @media screen and (max-width: 900px) {
-      #header #header-nav {
+      #header nav {
         width: 100%; } }
-    #header #header-nav a {
+    #header nav a {
       text-decoration: none;
       color: #0D3960;
       padding: 10px; }
       @media screen and (max-width: 900px) {
-        #header #header-nav a {
+        #header nav a {
           display: block; } }
 
 #first-container {
@@ -166,6 +166,7 @@ table {
     #add-manually div label {
       width: 100px; }
     #add-manually div input {
+      font-size: 20px;
       width: 256px;
       text-align: center; }
   #add-manually p {

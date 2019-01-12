@@ -1,5 +1,5 @@
-myApp.controller('settingsController', ['$scope', '$window', '$http', 'usersApi', '$localStorage',
-  function($scope, $window, $http, usersApi, $localStorage){
+myApp.controller('settingsController', ['$scope', '$window', 'usersApi', '$localStorage',
+  function($scope, $window, usersApi, $localStorage){
 
   $scope.OnSave= function(){
 
@@ -21,8 +21,8 @@ myApp.controller('settingsController', ['$scope', '$window', '$http', 'usersApi'
 
       }, function errorCallback(response){
 
-        $scope.updatedSuccessfully = false;
         $scope.updateFailed = true;
+        $scope.updatedSuccessfully = false;
 
     });
   };  // end OnSave function

@@ -1,5 +1,5 @@
-myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout', '$localStorage', '$window',
- function($scope, $http, shiftsApi, $timeout, $localStorage, $window) {
+myApp.controller('shiftsController', ['$scope', 'shiftsApi', '$timeout', '$localStorage', '$window',
+ function($scope, shiftsApi, $timeout, $localStorage, $window) {
 
   const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -7,7 +7,7 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
 
   $scope.months = monthNames;
   $scope.years = years;
-  $scope.selectedYear = "2018";
+  $scope.selectedYear = "2019";
   const d = new Date();
   $scope.selectedMonth = monthNames[d.getMonth()];
   $scope.monthShifts = {};
@@ -60,6 +60,7 @@ myApp.controller('shiftsController', ['$scope', '$http', 'shiftsApi', '$timeout'
 
   };  // end DownloadExcel function
 
+  // util function for DownloadExcel function
   function s2ab(s) {
     var buf = new ArrayBuffer(s.length);
     var view = new Uint8Array(buf);

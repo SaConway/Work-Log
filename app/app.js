@@ -1,5 +1,9 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngStorage', 'ngAnimate']);
 
+// ngRoute module provides routing and for AngularJS apps.
+// ngStorage contains two services: $localStorage and $sessionStorage. We will use the first.
+// ngAnimate for animation
+
 myApp.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
@@ -43,6 +47,6 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 myApp.run(['$rootScope', function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.title = current.$$route.title;
+        $rootScope.title = current.$$route.title;   // $$ for private identifiers
     });
 }]);

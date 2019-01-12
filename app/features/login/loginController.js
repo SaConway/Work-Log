@@ -1,15 +1,15 @@
-myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$window', 'usersApi', 'user',
-  function($scope, $http, $localStorage, $window, usersApi, user){
+myApp.controller('loginController', ['$scope', '$localStorage', '$window', 'usersApi', 'user',
+  function($scope, $localStorage, $window, usersApi, user){
 
   $scope.OnLoginBtn = function(){
 
     if ($scope.fullName == undefined || $scope.id == undefined) return;
 
-    $username = toFullNameCase($scope.fullName.trim());
-    $userid = $scope.id.trim();
+    var username = toFullNameCase($scope.fullName.trim());
+    var userid = $scope.id.trim();
 
-    user.setFullName($username);
-    user.setId($userid);
+    user.setFullName(username);
+    user.setId(userid);
 
     usersApi.addUser(user.getUser()).
       then(function successCallback(response){
@@ -48,11 +48,8 @@ myApp.controller('loginController', ['$scope', '$http', '$localStorage', '$windo
 
   function init(){
 
-    $scope.isValid = true;
-
     if ($localStorage.userId != undefined){
       $window.location.href = '#!/home';
-      return;
     }
 
   };  // end init function

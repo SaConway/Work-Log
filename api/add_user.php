@@ -1,14 +1,16 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+// Accepts all origins (domain, plus a scheme and port number)
 header('Access-Control-Allow-Methods: *');
+// Accepts all methods - get, post, etc.
 header('Access-Control-Allow-Headers: *');
+// Accept all headers
 
 require 'connect.php';
 $connect = connect();
 
 $fullname = $_GET['fullName'];
 $id = $_GET['id'];
-// $hourlywage = $_GET['hourlyWage'];
 
 if ($fullname != null and $id != null) {
 

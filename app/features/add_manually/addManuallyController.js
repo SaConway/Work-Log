@@ -2,7 +2,6 @@ myApp.controller('addManuallyController', ['$scope', '$window', 'shift', '$local
   function($scope, $window, shift, $localStorage, shiftsApi){
 
   if ($localStorage.userId == undefined){
-    console.log("in")
     $window.location.href = '#!/login';
     return;
   }

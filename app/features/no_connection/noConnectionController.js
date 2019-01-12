@@ -9,7 +9,5 @@ myApp.controller('noConnectionController', ['$scope', '$window', 'connectionApi'
       },
        function errorCallback(response){
        });
-
   };
-
 }]);
